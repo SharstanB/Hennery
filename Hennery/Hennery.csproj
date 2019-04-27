@@ -238,6 +238,8 @@
     <Resource Include="Image\icons8_Purchase_Order_75px.png" />
     <Resource Include="Image\icons8_Search_64px_5.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\baseline_add_circle_outline_white_18dp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

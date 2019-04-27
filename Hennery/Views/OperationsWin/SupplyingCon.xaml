@@ -4,9 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hennery.Views.OperationsWin"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
     <Grid>
-            
+         <Grid.RowDefinitions>
+             <RowDefinition Height="0.5*"></RowDefinition>
+             <RowDefinition Height="*"></RowDefinition>
+             <RowDefinition Height="2*"></RowDefinition>
+             <RowDefinition Height="0.5*"></RowDefinition>
+         </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="1"  >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/../Image/baseline_add_circle_outline_white_18dp.png" ></ImageBrush>
+                     </Button.Background>
+                </Button>
+                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Column="0"
+                         materialDesign:HintAssist.Hint="رقم التسلسل" FlowDirection="RightToLeft"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
