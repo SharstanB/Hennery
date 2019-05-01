@@ -56,10 +56,11 @@
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker
+                    <DatePicker BorderBrush="#3A7D44"
                         HorizontalAlignment="Stretch"  Width="350" 
                         materialDesign:HintAssist.Hint="تاريخ الانتاج"
-                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                              />
                     <ComboBox
                         materialDesign:HintAssist.Hint="اسم مستودع التخزين" Grid.Row="1"  Width="350" 
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}">
@@ -140,9 +141,9 @@
         <Grid Grid.Row="2" Grid.Column="0">
             <Button
                 Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="100" Content="Add" Grid.Column="1"
+                Width="100" Content="Add" 
                 ToolTip="Resource name: MaterialDesignRaisedButton"
-                Background="#3A7D44">
+                Background="#3A7D44" BorderBrush="#3A7D44">
             </Button>
         </Grid>
     </Grid>

@@ -26,8 +26,10 @@ namespace Hennery
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
+       
         private void PopupBox_OnOpened(object sender, RoutedEventArgs e)
         {
            

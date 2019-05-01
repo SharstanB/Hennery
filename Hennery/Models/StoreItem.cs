@@ -9,18 +9,26 @@ namespace Hennery.Models
 {
     class StoreItem
     {
-        [Required]
+       
         public int Id { get; set; }
-        public int ProductionId { get; set; }
-        public ICollection<Production> Productions { get; set; }
-        public int SupplingItemId { get; set; }
-        public ICollection<SupplyingItem> SupplyingItems { get; set; }
-        public int FeedItemMixingId { get; set; }
-        public ICollection<FeedItemMixing> FeedItemMixings { get; set; }
-        public int StoreId { get; set; }
-        public ICollection<Store> Stores { get; set; }
+
+       
         public int Quantity { get; set; }
         [StringLength(50)]
         public String QuantityUnit { get; set; }
+
+        public Boolean IsDeleted { get; set; }
+
+        public  ICollection<ConsumptionStoreItem> ConsumptionStoreItems { get; set; }
+        public ICollection<StroreItemFeedItemMixing> StroreItemFeedItemMixings { get; set; }
+
+        public int? ProductionId { get; set; }
+        public Production Production { get; set; }
+        public int? SupplingItemId { get; set; }
+        public SupplyingItem SupplyingItem { get; set; }
+        public int? FeedItemMixingId { get; set; }
+        public FeedItemMixing FeedItemMixing { get; set; }
+        public int? StoreId { get; set; }
+        public Store Store { get; set; }
     }
 }

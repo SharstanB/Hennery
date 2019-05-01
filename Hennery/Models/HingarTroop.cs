@@ -9,10 +9,13 @@ namespace Hennery.Models
 {
     class HingarTroop
     {
-        [Required]
+    
         public int id { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public int Count { get; set; } // عدد الرؤوس الموجودة في الهنغار من الفوج
         public int HingarId { get; set; }
-        public int TroopId { get; set; }   
-        public int? Count { get; set; } // عدد الرؤوس الموجودة في الهنغار من الفوج
+        public Hingar Hingar { get; set; }
+        public int TroopId { get; set; }
+        public Troop Troop { get; set; }
     }
 }

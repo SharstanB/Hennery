@@ -9,14 +9,15 @@ namespace Hennery.Models
 {
     class CheckVaccine
     {
-        [Required]
+     
         public int Id { get; set; }
-        public int VaccineId { get; set; }
-        public ICollection<Vaccine> Vaccines { get; set; }
-        public int CheckId { get; set; }
-        public ICollection<Check> Checks { get; set; }
         public int Quantity { get; set; }
         [StringLength(50)]
         public String QuantityUnit { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public Vaccine Vaccine { get; set; }
+        public int? VaccineId { get; set; }
+        public int? CheckId { get; set; }
+        public Check Check { get; set; }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
 namespace Hennery.Views.OperationsWin
 {
@@ -20,9 +21,37 @@ namespace Hennery.Views.OperationsWin
     /// </summary>
     public partial class SupplyingCon : UserControl
     {
+        private ItemsWin ItemsWin;
         public SupplyingCon()
         {
             InitializeComponent();
+        }
+
+      
+        private void Sample1_DialogHost_OnDialogClosing(object sender, DialogClosingEventArgs eventargs)
+        {
+           
+        }
+
+        private void ButtonEdit_OnClick(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void ButtonDelete_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void ButtonShow_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            ItemsWin=new ItemsWin();
+            ItemsWin.ShowDialog();
         }
     }
 }

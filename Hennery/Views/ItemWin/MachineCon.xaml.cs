@@ -24,7 +24,7 @@ namespace Hennery.Views.ItemWin
         {
             InitializeComponent();
         }
-
+        
         private void ButtonShow_OnClick(object sender, RoutedEventArgs e)
         {
            

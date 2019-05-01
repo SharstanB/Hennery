@@ -9,11 +9,13 @@ namespace Hennery.Models
 {
     class Suppleir
     {
-        [Required]
+     
         public int Id { get; set; }
         [StringLength(50)]
         public String Name { get; set; }
+        public Boolean IsDeleted { get; set; }
         public int Phone { get; set; }
+        public ICollection<Supplying> Supplyings { get; set; }
 
     }
 }

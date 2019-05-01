@@ -22,7 +22,7 @@
             <ColumnDefinition Width="50"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Panel.ZIndex="3" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="auto">
+        <Grid Panel.ZIndex="3" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="auto" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
@@ -37,7 +37,7 @@
 
             </DockPanel>
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="LabelMain" PreviewMouseLeftButtonDown="LabelMain_OnPreviewMouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="الاستيراد" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                <Label Name="LabelMain" PreviewMouseLeftButtonDown="SupplyingBtn_OnPreviewMouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="الاستيراد" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
                 <Image Source="../../Image/create-new-pencil-button.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
 
             </DockPanel>
@@ -47,7 +47,7 @@
 
             </DockPanel>
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
-                <Label x:Name="RealStates" PreviewMouseLeftButtonDown="RealStates_OnPreviewMouseLeftButtonDown"  Style="{DynamicResource MenuLabel}" Content="الخلط" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Label x:Name="RealStates" PreviewMouseLeftButtonDown="MixtureBtn_OnPreviewMouseLeftButtonDown"  Style="{DynamicResource MenuLabel}" Content="الخلط" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
                 <Image Source="/Image/server.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
 
             </DockPanel>
@@ -68,8 +68,10 @@
 
         </StackPanel>
         </Grid>
-        <Grid Grid.Column="1" >
-               <ContentControl Name="ConsumptionFram" Grid.Column="1"  ></ContentControl>
+        <Grid Grid.Column="1"  >
+               <ContentControl Name="ConsumptionFram"   ></ContentControl>
+            <ContentControl Name="SupplyingFram"  ></ContentControl>
+            <ContentControl Name="MixtureFram"  ></ContentControl>
         </Grid>
         
     </Grid>

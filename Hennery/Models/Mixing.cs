@@ -10,8 +10,10 @@ namespace Hennery.Models
 {
     class Mixing
     {
-        [Required]
+  
         public int Id { get; set; }
         public DateTime MixDate{ get; set; }
+        public Boolean IsDeleted { get; set; }
+        public ICollection<FeedItemMixing> FeedItemMixings { get; set; }
     }
 }

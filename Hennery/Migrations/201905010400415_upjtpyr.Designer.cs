@@ -7,13 +7,13 @@ namespace Hennery.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class HenneryDB : IMigrationMetadata
+    public sealed partial class upjtpyr : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(HenneryDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(upjtpyr));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904262141064_HenneryDB"; }
+            get { return "201905010400415_upjtpyr"; }
         }
         
         string IMigrationMetadata.Source

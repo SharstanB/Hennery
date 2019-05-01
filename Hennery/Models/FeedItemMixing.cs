@@ -9,11 +9,16 @@ namespace Hennery.Models
 {
     class FeedItemMixing
     {
-        [Required]
+      
         public int Id { get; set; }
-        public int FeedItemId { get; set; }
-        public ICollection<FeedItem> FeedItems { get; set; }
+        public Boolean IsDeleted { get; set; }
         public int MixingId { get; set; }
-        public ICollection<Mixing> Mixings { get; set; }
+        public Mixing Mixing { get; set; }
+
+        public int FeedItemId { get; set; }
+        public FeedItem FeedItem { get; set; }
+         public ICollection<StoreItem> StoreItems { get; set; }
+        public ICollection<StroreItemFeedItemMixing>StroreItemFeedItemMixings { get; set; }
+
     }
 }

@@ -9,10 +9,15 @@ namespace Hennery.Models
 {
     class Check
     {
-        [Required]
+      
         public int Id { get; set; }
-        public int TroopId { get; set; }
-        public ICollection<Troop> Troops { get; set; }
-        public DateTime CheckDate { get; set; }
+        public DateTime? CheckDate { get; set; }
+        public Troop Troop { get; set; }
+
+        public Boolean IsDeleted { get; set; }
+        public int? TroopId { get; set; }
+        
+        public ICollection<CheckVaccine> CheckVaccines { get; set; }
+
     }
 }

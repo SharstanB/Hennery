@@ -10,14 +10,16 @@ namespace Hennery.Models
 {
     class ConsumptionStoreItem
     {
-        [Required]
+       
         public int Id { get; set; }
-        public int StoreItemId { get; set; }
-        public ICollection<StoreItem> StoreItems { get; set; }
-        public int ConsumptionId { get; set; }
-        public ICollection<Consumption> Consumptions { get; set; }
         public int? Quantity { get; set; }
         [StringLength(50)]
         public String QuantityUnit { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public int StoreItemId { get; set; }
+        public StoreItem StoreItem { get; set; }
+
+        public int ConsumptionId { get; set; }
+        public Consumption Consumption { get; set; }
     }
 }

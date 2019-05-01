@@ -9,10 +9,14 @@ namespace Hennery.Models
 {
     class Hingar
     {
-        [Required]
+
         public int Id { get; set; }
         public int Capacity { get; set; }
         [StringLength(50)]
         public String Type { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public ICollection<HingarTroop> HingarTroops { get; set; }
+        public ICollection<Preparation> Preparations { get; set; }
+        public ICollection<Store> Stores { get; set; }
     }
 }

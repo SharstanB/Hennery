@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Hennery.Models
 {
-    class Store
+     class Store
     {
-        [Required]
+       
         public int Id { get; set; }
-        public int HingarId  { get; set; }
-        public ICollection<Hingar> Hingars { get; set; }
+   
         [StringLength(50)]
         public String StoreName { get; set; }
         public int Area { get; set; }
+        public Boolean IsDeleted { get; set; }
         public int Temperature { get; set; }
         [StringLength(50)]
         public String TemperatureUnit { get; set; }
@@ -23,6 +23,12 @@ namespace Hennery.Models
         [StringLength(50)]
         public String HumidityUnit { get; set; }
         public Boolean Light { get; set; }
+       
+
+        public int HingarId { get; set; }
+        public Hingar Hingar { get; set; }
+
+        public ICollection<StoreItem> StoreItems { get; set; }
 
     }
 }

@@ -39,7 +39,7 @@
 
             </DockPanel>
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="LabelMain" PreviewMouseLeftButtonDown="LabelMain_OnPreviewMouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="المواد الغذائية" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
+                <Label Name="LabelMain" PreviewMouseLeftButtonDown="LabelMain_OnPreviewMouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content=" المواد الغذائية" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" />
                 <Image Source="/Image/cityscape.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
 
             </DockPanel>
@@ -60,9 +60,9 @@
             </StackPanel>
       </Grid>
         <Grid Grid.Column="1" Grid.Row="0" Margin="50 0 0 0">
-           <ContentControl Name="ItemFram" ></ContentControl>
-            <ContentControl Name="ProductFram"></ContentControl>
-       </Grid>
-        
+            <ContentControl Name="ItemFram" ></ContentControl>
+            <ContentControl Name="ProductFram" ></ContentControl>
+            <ContentControl Name="MachineFram" ></ContentControl>
+        </Grid>
     </Grid>
 </Window>

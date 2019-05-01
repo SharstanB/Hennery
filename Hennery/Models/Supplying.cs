@@ -9,10 +9,12 @@ namespace Hennery.Models
 {
     class Supplying
     {
-        [Required]
+       
         public int Id { get; set; }
-        public int SuppleirId { get; set; }
-        public ICollection<Supplying> Supplyings { get; set; }
         public DateTime SupplyingDate { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public Suppleir Suppleir { get; set; }
+        public int? SuppleirId { get; set; }
+        public ICollection<SupplyingItem> SupplyingItems { get; set; }
     }
 }

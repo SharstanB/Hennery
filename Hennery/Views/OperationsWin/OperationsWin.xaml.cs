@@ -20,26 +20,40 @@ namespace Hennery.Views.OperationsWin
     public partial class OperationsWin : Window
     {
         private ConsumptionCon consumptionCon;
+        private SupplyingCon supplyingCon;
+        private MixturesCon MixturesCon;
         public OperationsWin()
         {
             InitializeComponent();
+            Load();
         }
 
-
+        public void Load()
+        {
+            supplyingCon = new SupplyingCon();
+            SupplyingFram.Content = supplyingCon;
+        }
         private void LabelMain_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
         }
 
-        private void RealStates_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
 
         private void Label1_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             consumptionCon=new ConsumptionCon();
             ConsumptionFram.Content = consumptionCon;
+        }
+
+        private void SupplyingBtn_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           Load();
+        }
+
+        private void MixtureBtn_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           MixturesCon=new MixturesCon();
+            MixtureFram.Content = MixturesCon;
         }
     }
 }

@@ -8,31 +8,164 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
     <Grid>
-         <Grid.RowDefinitions>
-             <RowDefinition Height="0.5*"></RowDefinition>
-             <RowDefinition Height="*"></RowDefinition>
-             <RowDefinition Height="2*"></RowDefinition>
-             <RowDefinition Height="0.5*"></RowDefinition>
-         </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+           
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Button  Grid.Column="1"  >
-                    <Button.Background>
-                        <ImageBrush ImageSource="/../Image/baseline_add_circle_outline_white_18dp.png" ></ImageBrush>
-                     </Button.Background>
-                </Button>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Column="0"
-                         materialDesign:HintAssist.Hint="رقم التسلسل" FlowDirection="RightToLeft"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Grid Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"  Grid.Column="0" BorderBrush="#3A7D49"
+                         materialDesign:HintAssist.Hint="اسم المورد" FlowDirection="RightToLeft" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                />
+
+                <DatePicker Grid.Row="1" BorderBrush="#3A7D49" 
+                    Width="350" 
+                    materialDesign:HintAssist.Hint="تاريخ الاستيرادة"
+                    Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                <Rectangle Grid.Row="0" StrokeThickness="1" Stroke="Gray"  HorizontalAlignment="Right" Grid.RowSpan="2" Margin="0 20 0 10" >
+
+                </Rectangle>
+            </Grid>
+            <Grid Column="1">
+            <materialDesign:DialogHost  
+                                         DialogClosing="Sample1_DialogHost_OnDialogClosing"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center">
+                <materialDesign:DialogHost.DialogContent  >
+                    <StackPanel 
+                        Margin="16" >
+                        <TextBox 
+                            Margin="0 8 0 0"
+                            HorizontalAlignment="Stretch"
+                            x:Name="FruitTextBox" />
+                        <StackPanel
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                        </StackPanel>
+                    </StackPanel>
+                </materialDesign:DialogHost.DialogContent>
+                <Border  
+                    BorderThickness="1" Margin="10 0 0 0" 
+                    BorderBrush="#3A7D44"
+                    MinWidth="350"
+                    MinHeight="190"
+                    ClipToBounds="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="*" />
+                            <RowDefinition
+                                Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ListBox
+                            x:Name="ComponentsListBox">
+
+                        </ListBox>
+                        <materialDesign:ColorZone
+                            Mode="PrimaryMid" Background="#3A7D44"
+                            Grid.Row="1"
+                            Effect="{DynamicResource MaterialDesignShadowDepth5}">
+                            <TextBlock
+                                Margin="16">
+                                مواد المستوردة
+                            </TextBlock>
+                        </materialDesign:ColorZone >
+                        <Button
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                            Click="ButtonBase_OnClick" Background="#69B578" BorderBrush="#69B578"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            Grid.Row="0"
+                            Margin="0 0 28 -20">
+                            <Viewbox
+                                Width="22"
+                                Height="22">
+                                <Canvas
+                                    Width="24"
+                                    Height="24">
+                                    <Path
+                                        Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                                        Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=Foreground}" />
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                    </Grid>
+                </Border>
+            </materialDesign:DialogHost>
             </Grid>
         </Grid>
+        <Grid Row="1">
+            <DataGrid x:Name="DgvSupplyingDetails"  IsReadOnly="True" 
+                      BorderBrush="#60CB95"
+                      BorderThickness="1"
+                      Margin="25 15 25 15"
+                      CanUserSortColumns="True"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="false"
+                      FontSize="14"
+                              
+                      materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                      materialDesign:DataGridAssist.ColumnHeaderPadding="7">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#F7EDEDED" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="اسم المورد" Binding="{Binding EmployeeNumber}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="تاريخ الاستيرادة" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <StackPanel Orientation="Horizontal">
+                                    <Button       ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonShow" Click="ButtonShow_OnClick"  CommandParameter="{Binding Id}" >
+                                        <Button.Background>
+                                            <ImageBrush  ImageSource="/Image/eye.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+
+                                    </Button>
+                                    <Button   Margin="10 0 10 0"  ToolTip="تعديل"      Click="ButtonEdit_OnClick"                Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonEdit"  CommandParameter="{Binding Id}"   >
+                                        <Button.Background>
+                                            <ImageBrush  ImageSource="/Image/create-new-pencil-button.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+
+                                    </Button>
+                                    <Button             ToolTip="حذف"      Click="ButtonDelete_OnClick"        Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonDelete"   CommandParameter="{Binding Id}">
+                                        <Button.Background>
+                                            <ImageBrush  ImageSource="/Image/cancel-button.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+        <Grid Row="2">
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Width="100" Content="Add" Grid.Column="1"
+                ToolTip="Resource name: MaterialDesignRaisedButton"
+                Background="#3A7D44">
+            </Button>
+        </Grid>
+       
     </Grid>
 </UserControl>
