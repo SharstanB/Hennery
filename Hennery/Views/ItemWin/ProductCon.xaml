@@ -9,9 +9,9 @@
              d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition  Height="0.8*"></RowDefinition>
+            <RowDefinition  Height="2*"></RowDefinition>
+            <RowDefinition  Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>   
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                        
                     </Grid.RowDefinitions>
                     <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="0"
                              materialDesign:HintAssist.Hint="اسم المنتج" FlowDirection="RightToLeft"
@@ -42,9 +42,7 @@
                         </ComboBoxItem>
                       
                     </ComboBox>
-                    <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="2"  
-                             materialDesign:HintAssist.Hint="رقم الفوج المنتج" FlowDirection="RightToLeft"
-                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
                     <Rectangle Grid.Row="0"  HorizontalAlignment="Right" Grid.RowSpan="3" Stroke="Gray" StrokeThickness="1"  Margin="0 50 0 20" ></Rectangle>
 
                 </Grid>
@@ -54,29 +52,15 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                       
                     </Grid.RowDefinitions>
                     <DatePicker BorderBrush="#3A7D44"
                         HorizontalAlignment="Stretch"  Width="350" 
                         materialDesign:HintAssist.Hint="تاريخ الانتاج"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                               />
-                    <ComboBox
-                        materialDesign:HintAssist.Hint="اسم مستودع التخزين" Grid.Row="1"  Width="350" 
-                        Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                        <ComboBoxItem>
-                            البيض الاحمر
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            البيض الابيض
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            لحم الفروج
-                        </ComboBoxItem>
-
-                    </ComboBox>
                     <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="2"  
-                             materialDesign:HintAssist.Hint="كمية التخزين" FlowDirection="RightToLeft"
+                             materialDesign:HintAssist.Hint="رقم الفوج المنتج" FlowDirection="RightToLeft"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
             </Grid>
@@ -104,8 +88,6 @@
                     <DataGridTextColumn Width="*" Header="نوع المنتج" Binding="{Binding Name}"></DataGridTextColumn>
                     <DataGridTextColumn Width="*" Header="رقم الفوج المنتج" Binding="{Binding DateRgister,StringFormat=d}"></DataGridTextColumn>
                     <DataGridTextColumn Width="*" Header="تايخ الانتاج" Binding="{Binding Address}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="اسم مستودع التخزين" Binding="{Binding Address}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="كمية التخزين" Binding="{Binding Address}"></DataGridTextColumn>
                     <DataGridTemplateColumn Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate >

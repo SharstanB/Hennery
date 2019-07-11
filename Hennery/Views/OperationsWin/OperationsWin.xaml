@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Height="600" Width="900"  WindowStyle="ThreeDBorderWindow" WindowState="Normal" FlowDirection="RightToLeft">
     <Window.Resources>
-
         <Storyboard x:Key="sbShowLeftMenu" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-150,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
         </Storyboard>

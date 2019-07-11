@@ -7,143 +7,117 @@
              xmlns:local="clr-namespace:Hennery.Views.ItemWin"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Row="0" Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="0"
-                         materialDesign:HintAssist.Hint="اسم الآلة" FlowDirection="RightToLeft"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="1"
-                         materialDesign:HintAssist.Hint="رقم التسلسل" FlowDirection="RightToLeft"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="2"
-                         materialDesign:HintAssist.Hint="الشركة المصنعة" FlowDirection="RightToLeft"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                <Rectangle Grid.Row="0"  HorizontalAlignment="Right" Grid.RowSpan="3" Stroke="Gray" StrokeThickness="1"  Margin="0 50 0 20" ></Rectangle>
-            </Grid>
-            <Grid Row="0" Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <ComboBox
-                    materialDesign:HintAssist.Hint="نوع الآلة" Grid.Row="0"  Width="350" 
-                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    <ComboBoxItem>
-                        كاسرة
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        طاحنة العلف
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        خلاط مواد الغذائية
-                    </ComboBoxItem>
+    <materialDesign:DialogHost  Name="dh">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+              
+                <RowDefinition  Height="2*"></RowDefinition>
+                <RowDefinition  Height="0.3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Row="0" Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="0"
+                             materialDesign:HintAssist.Hint="اسم الآلة" FlowDirection="RightToLeft"
+                             Name="NameTxt" />
+                    <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="1"
+                             materialDesign:HintAssist.Hint="رقم التسلسل" FlowDirection="RightToLeft"
+                             Name="NumberTxt" />
 
-                </ComboBox>
-                <ComboBox
-                    materialDesign:HintAssist.Hint="اسم مستودع التخزين" Grid.Row="1"  Width="350" 
-                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    <ComboBoxItem>
-                        مستودع الاعلاف
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        مستودع الآلات
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        مستودع الهنغار الاول
-                    </ComboBoxItem>
-
-                </ComboBox>
-                <TextBox
-                    TextWrapping="Wrap" 
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"  Width="350" Grid.Row="2"
-                    AcceptsReturn="True"
-                    VerticalScrollBarVisibility="Auto"
-                    SpellCheck.IsEnabled="True"
-                    materialDesign:HintAssist.Hint="وصف"
-                    >
-                </TextBox>
-            </Grid>
-        </Grid>
-        <Grid Row="1" Column="0">
-            <DataGrid x:Name="DGVEmployee" Grid.Row="2"  IsReadOnly="True" 
-                      BorderBrush="#60CB95"
-                      BorderThickness="1"
-                      Margin="15"
-                      CanUserSortColumns="True"
-                      CanUserAddRows="False"
-                      AutoGenerateColumns="false"
-                      FontSize="14"
+                    <Rectangle Grid.Row="0"  HorizontalAlignment="Right" Grid.RowSpan="3" Stroke="Gray" StrokeThickness="1"  Margin="0 50 0 20" ></Rectangle>
+                </Grid>
+                <Grid Row="0" Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBox  Grid.Row="1" Name="DescripsionTxt"
+                              TextWrapping="Wrap" 
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"  Width="380" 
+                              AcceptsReturn="True"
+                              VerticalScrollBarVisibility="Auto"
+                              SpellCheck.IsEnabled="True"
+                              materialDesign:HintAssist.Hint="وصف"
+                              >
+                    </TextBox>
+                    <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="0"
+                             materialDesign:HintAssist.Hint="الشركة المصنعة" FlowDirection="RightToLeft"
+                             Name="CompanyTxt" />
+                   
+                </Grid>
+            </Grid >
+            
+            <Grid Row="1" Column="0">
+                <DataGrid x:Name="DgvMachine" Grid.Row="2"  IsReadOnly="True" 
+                          BorderBrush="#60CB95"
+                          BorderThickness="1"
+                          Margin="15"
+                          CanUserSortColumns="True"
+                          CanUserAddRows="False"
+                          AutoGenerateColumns="false"
+                          FontSize="14"
                               
-                      materialDesign:DataGridAssist.CellPadding="10 8 8 8"
-                      materialDesign:DataGridAssist.ColumnHeaderPadding="7">
-                <DataGrid.Resources>
-                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#F7EDEDED" />
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="اسم المنتج" Binding="{Binding EmployeeNumber}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="نوع المنتج" Binding="{Binding Name}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="رقم الفوج المنتج" Binding="{Binding DateRgister,StringFormat=d}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="تايخ الانتاج" Binding="{Binding Address}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="اسم مستودع التخزين" Binding="{Binding Address}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="كمية التخزين" Binding="{Binding Address}"></DataGridTextColumn>
-                    <DataGridTemplateColumn Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate >
-                                <StackPanel Orientation="Horizontal">
-                                    <Button       ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonShow" Click="ButtonShow_OnClick"  CommandParameter="{Binding Id}" >
-                                        <Button.Background>
-                                            <ImageBrush  ImageSource="/Image/eye.png">
-                                            </ImageBrush>
-                                        </Button.Background>
+                          materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                          materialDesign:DataGridAssist.ColumnHeaderPadding="7" SelectionChanged="DGVEmployee_SelectionChanged">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#F7EDEDED" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="اسم الالة" Binding="{Binding EmployeeNumber}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="رقم التسلسل" Binding="{Binding SequenceNumber}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="الشركة المصنعة" Binding="{Binding Address}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="الوصف" Binding="{Binding Address}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button       ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonShow" Click="ButtonShow_OnClick"  CommandParameter="{Binding Id}" >
+                                            <Button.Background>
+                                                <ImageBrush  ImageSource="/Image/eye.png">
+                                                </ImageBrush>
+                                            </Button.Background>
 
-                                    </Button>
-                                    <Button   Margin="10 0 10 0"  ToolTip="تعديل"      Click="ButtonEdit_OnClick"                Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonEdit"  CommandParameter="{Binding Id}"   >
-                                        <Button.Background>
-                                            <ImageBrush  ImageSource="/Image/create-new-pencil-button.png">
-                                            </ImageBrush>
-                                        </Button.Background>
+                                        </Button>
+                                        <Button   Margin="10 0 10 0"  ToolTip="تعديل"      Click="ButtonEdit_OnClick"                Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonEdit"  CommandParameter="{Binding Id}"   >
+                                            <Button.Background>
+                                                <ImageBrush  ImageSource="/Image/create-new-pencil-button.png">
+                                                </ImageBrush>
+                                            </Button.Background>
 
-                                    </Button>
-                                    <Button             ToolTip="حذف"      Click="ButtonDelete_OnClick"        Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonDelete"   CommandParameter="{Binding Id}">
-                                        <Button.Background>
-                                            <ImageBrush  ImageSource="/Image/cancel-button.png">
-                                            </ImageBrush>
-                                        </Button.Background>
+                                        </Button>
+                                        <Button             ToolTip="حذف"      Click="ButtonDelete_OnClick"        Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonDelete"   CommandParameter="{Binding Id}">
+                                            <Button.Background>
+                                                <ImageBrush  ImageSource="/Image/cancel-button.png">
+                                                </ImageBrush>
+                                            </Button.Background>
 
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Row="2" Column="0">
+                <Button  Name="BtnAdd" Click="BtnAdd_OnClick"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Width="100" Content="Add" Grid.Column="1"
+                    ToolTip="Resource name: MaterialDesignRaisedButton"
+                    Background="#3A7D44" VerticalAlignment="Top">
+                </Button>
+            </Grid>
         </Grid>
-        <Grid Row="2" Column="0">
-            <Button
-                Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="100" Content="Add" Grid.Column="1"
-                ToolTip="Resource name: MaterialDesignRaisedButton"
-                Background="#3A7D44">
-            </Button>
-        </Grid>
-    </Grid>
+    </materialDesign:DialogHost>
 </UserControl>

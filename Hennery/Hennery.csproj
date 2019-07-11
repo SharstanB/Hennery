@@ -71,45 +71,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\FeedItemDetails.cs" />
-    <Compile Include="Migrations\201904301121344_Update.cs" />
-    <Compile Include="Migrations\201904301121344_Update.Designer.cs">
-      <DependentUpon>201904301121344_Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904301126175_upd.cs" />
-    <Compile Include="Migrations\201904301126175_upd.Designer.cs">
-      <DependentUpon>201904301126175_upd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010321218_upj.cs" />
-    <Compile Include="Migrations\201905010321218_upj.Designer.cs">
-      <DependentUpon>201905010321218_upj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010330343_upjt.cs" />
-    <Compile Include="Migrations\201905010330343_upjt.Designer.cs">
-      <DependentUpon>201905010330343_upjt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010353054_upjtp.cs" />
-    <Compile Include="Migrations\201905010353054_upjtp.Designer.cs">
-      <DependentUpon>201905010353054_upjtp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010358194_upjtpy.cs" />
-    <Compile Include="Migrations\201905010358194_upjtpy.Designer.cs">
-      <DependentUpon>201905010358194_upjtpy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010400415_upjtpyr.cs" />
-    <Compile Include="Migrations\201905010400415_upjtpyr.Designer.cs">
-      <DependentUpon>201905010400415_upjtpyr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905010514253_upjtpyrp.cs" />
-    <Compile Include="Migrations\201905010514253_upjtpyrp.Designer.cs">
-      <DependentUpon>201905010514253_upjtpyrp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905011510296_oipp.cs" />
-    <Compile Include="Migrations\201905011510296_oipp.Designer.cs">
-      <DependentUpon>201905011510296_oipp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905011914491_uoo.cs" />
-    <Compile Include="Migrations\201905011914491_uoo.Designer.cs">
-      <DependentUpon>201905011914491_uoo.cs</DependentUpon>
+    <Compile Include="Migrations\201905051442371_up.cs" />
+    <Compile Include="Migrations\201905051442371_up.Designer.cs">
+      <DependentUpon>201905051442371_up.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Check.cs" />
@@ -120,6 +84,7 @@
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\FeedItem.cs" />
     <Compile Include="Models\FeedItemMixing.cs" />
+    <Compile Include="Models\FeedItemType.cs" />
     <Compile Include="Models\Hingar.cs" />
     <Compile Include="Models\HingarTroop.cs" />
     <Compile Include="Models\Item.cs" />
@@ -135,6 +100,7 @@
     <Compile Include="Models\SupplyingItem.cs" />
     <Compile Include="Models\Troop.cs" />
     <Compile Include="Models\Vaccine.cs" />
+    <Compile Include="Models\VaccineType.cs" />
     <Compile Include="Views\ItemWin\FeedCon.xaml.cs">
       <DependentUpon>FeedCon.xaml</DependentUpon>
     </Compile>
@@ -218,35 +184,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201904301121344_Update.resx">
-      <DependentUpon>201904301121344_Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904301126175_upd.resx">
-      <DependentUpon>201904301126175_upd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010321218_upj.resx">
-      <DependentUpon>201905010321218_upj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010330343_upjt.resx">
-      <DependentUpon>201905010330343_upjt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010353054_upjtp.resx">
-      <DependentUpon>201905010353054_upjtp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010358194_upjtpy.resx">
-      <DependentUpon>201905010358194_upjtpy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010400415_upjtpyr.resx">
-      <DependentUpon>201905010400415_upjtpyr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905010514253_upjtpyrp.resx">
-      <DependentUpon>201905010514253_upjtpyrp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905011510296_oipp.resx">
-      <DependentUpon>201905011510296_oipp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905011914491_uoo.resx">
-      <DependentUpon>201905011914491_uoo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905051442371_up.resx">
+      <DependentUpon>201905051442371_up.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

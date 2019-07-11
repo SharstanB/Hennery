@@ -24,6 +24,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
+
                 <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"  Grid.Column="0" BorderBrush="#3A7D49"
                          materialDesign:HintAssist.Hint="اسم المورد" FlowDirection="RightToLeft" 
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" 

@@ -35,7 +35,7 @@ namespace Hennery
         public void Load()
         {
             FeedCon feedCon = new FeedCon();
-            ItemFram.Content = feedCon;
+            MyGrid.Children.Add(feedCon) ;
         }
         private void LabelMain_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,13 +45,13 @@ namespace Hennery
         private void Label1_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MachineCon = new MachineCon();
-            MachineFram.Content = MachineCon;
-        }
+            MyGrid.Children.Add(MachineCon);
+;        }
 
         private void RealStates_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ProductCon = new ProductCon();
-            ProductFram.Content = ProductCon;
+            MyGrid.Children.Add(ProductCon);
         }
 
       

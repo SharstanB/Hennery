@@ -19,6 +19,7 @@ namespace Hennery.Models
         public int GoodnessPeriod { get; set; }
         public Boolean IsDeleted { get; set; }
         public ICollection<StoreItem> StoreItems { get; set; }
+
         public ICollection<Machine> Machines { get; set; }
         public ICollection<Troop>  Troops { get; set; }
         public Item Item { get; set; }

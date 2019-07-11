@@ -10,19 +10,20 @@ namespace Hennery.Models
 {
     class FeedItem
     {
-     public int Id { get; set; }
-        public int? Temperature { get; set; }
-        [StringLength(50)]
-        public string TemperatureUnit { get; set; }
-        public int? Humidity { get; set; }
-        [StringLength(50)]
-        public String HumidityUnit { get; set; }
+       [Key]
+       public int Id { get; set; }
+        public String Temperature { get; set; }
+
+        public String Humidity { get; set; }
         public Boolean Light { get; set; }
         public Boolean IsDeleted { get; set; }
-        [Index(IsUnique = true)]
+        [Required]
         public int ItemId { get; set; }
         public Item Item { get; set; }
+
         public ICollection<FeedItemMixing> FeedItemMixings { get; set; }
 
+        public FeedItemType FeedItemType { get; set; }
+        public int FeedItemTypeId { get; set; }
     }
 }

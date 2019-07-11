@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hennery"
         mc:Ignorable="d"
-        Height="700" Width="1000"  WindowStyle="ThreeDBorderWindow" WindowState="Normal" Background="#F9F9F9">
+        Height="700" Width="1000"  WindowStyle="ThreeDBorderWindow" WindowState="Normal" Background="#F9F9F7">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
@@ -36,7 +36,7 @@
             <Button Name="ItemBtm"
                 Grid.Column="3" Grid.Row="2" MaxHeight="130" MinHeight="80" FontSize="30" Background="#ED254A" Click="ItemBtm_OnClick"
             >
-                _المواد
+                _إضافة المواد
             </Button>
             <Button
                 Grid.Column="1" Grid.Row="4" MaxHeight="130" MinHeight="80" FontSize="30" Background="#037020"

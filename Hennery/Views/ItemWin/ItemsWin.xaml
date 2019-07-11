@@ -54,12 +54,10 @@
 
                 </DockPanel>
 
-                <DockPanel Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="auto" Height="auto" LastChildFill="True" >
-
-                </DockPanel>
+                
             </StackPanel>
       </Grid>
-        <Grid Grid.Column="1" Grid.Row="0" Margin="50 0 0 0">
+        <Grid Name="MyGrid" Grid.Column="1" Grid.Row="0" Margin="50 0 0 0">
             <ContentControl Name="ItemFram" ></ContentControl>
             <ContentControl Name="ProductFram" ></ContentControl>
             <ContentControl Name="MachineFram" ></ContentControl>

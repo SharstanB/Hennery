@@ -6,12 +6,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hennery.Views.OperationsWin"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9" Loaded="FeedCon_OnLoaded">
+             d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9" >
     <materialDesign:DialogHost Name="dh">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1.2*"></RowDefinition>
-                <RowDefinition  Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition  Height="0.5*"></RowDefinition>
+                <RowDefinition  Height="2*"></RowDefinition>
                 <RowDefinition  Height="0.3*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid  Row="0" >
@@ -23,7 +24,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
+                       
                     </Grid.RowDefinitions>
                     <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="0" Name="TxtT"
                          materialDesign:HintAssist.Hint="درجة الحرارة" FlowDirection="RightToLeft"
@@ -31,49 +32,49 @@
                     <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Grid.Row="1" Name="TxtH"
                          materialDesign:HintAssist.Hint="درجة الرطوبة" FlowDirection="RightToLeft"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <Grid Row="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Label Content="حالة الضوء" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Label>
-                        <ToggleButton Grid.Column="1" Width="50" Height="50" HorizontalAlignment="Left" Background="#69B578" Name="Tolight"
-                                  Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                                  ToolTip="MaterialDesignFlatPrimaryToggleButton"
-                                  IsChecked="True">
-                            <materialDesign:PackIcon 
-                            Kind="lamp"
-                            Height="21"
-                            Width="21"
-                            Foreground="#254D32"/>
-                        </ToggleButton>
-                    </Grid>
+                   
                 </Grid>
                 <Grid Column="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Name="TxtName"
                          materialDesign:HintAssist.Hint="اسم المادة" FlowDirection="RightToLeft"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+              
                     <ComboBox
-                    materialDesign:HintAssist.Hint="نوع المادة" Grid.Row="1" Width="350" SelectedValuePath="Id" DisplayMemberPath="Type" Name="ComType"  SelectionChanged="ComType_OnSelectionChanged "
-                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        materialDesign:HintAssist.Hint="نوع المادة" 
+                        IsEditable="True"  Grid.Row="1" Width="350" SelectedValuePath="Id" DisplayMemberPath="FeedType" Name="ComType"  SelectionChanged="ComType_OnSelectionChanged"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                      
+                       
+                    </ComboBox>
 
-                    </ComboBox>
-                    <ComboBox
-                    materialDesign:HintAssist.Hint="المستودع" Grid.Row="2" Width="350" SelectedValuePath="Id" Name="ComStor" DisplayMemberPath="Name" SelectionChanged="ComStor_OnSelectionChanged"
-                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    </ComboBox>
                     <Rectangle Grid.Row="0" StrokeThickness="1" Stroke="Gray"  HorizontalAlignment="Right" Grid.RowSpan="3" Margin="0 50 0 20" >
 
                     </Rectangle>
 
                 </Grid>
             </Grid>
-            <Grid Row="1" Margin="5">
+            <Grid Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="حالة الضوء" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 40 0" FontSize="16"></Label>
+                <ToggleButton Grid.Column="1" Width="50" Height="50" HorizontalAlignment="Left" Background="#69B578" Name="Tolight" Margin="40 0 0 0"
+                              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                              IsChecked="True">
+                    <materialDesign:PackIcon 
+                        Kind="lamp"
+                        Height="21"
+                        Width="21"
+                        Foreground="#254D32"/>
+                </ToggleButton>
+            </Grid>
+            <Grid Row="2" Margin="5">
                 <DataGrid x:Name="Dgv" Grid.Row="2"  IsReadOnly="True" 
                       BorderBrush="#60CB95"
                       BorderThickness="1"
@@ -91,9 +92,8 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="*" Header="اسم المادة" Binding="{Binding Name}"></DataGridTextColumn>
-                        <DataGridTextColumn Width="*" Header="نوع المادة" Binding="{Binding Type.Name}"></DataGridTextColumn>
-                        <DataGridTextColumn Width="*" Header="المستودع" Binding="{Binding Store.Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="اسم المادة" Binding="{Binding Item.Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="نوع المادة" Binding="{Binding FeedItemType.FeedType}"></DataGridTextColumn>
                         <DataGridTextColumn Width="*" Header="درجة الحرارة" Binding="{Binding Temperature}"></DataGridTextColumn>
                         <DataGridTextColumn Width="*" Header="درجة الرطوبة" Binding="{Binding Humidity}"></DataGridTextColumn>
                         <DataGridTextColumn Width="*" Header="حالة الضوء" Binding="{Binding Light}"></DataGridTextColumn>
@@ -101,13 +101,6 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >
                                     <StackPanel Orientation="Horizontal">
-                                        <Button       ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonShow" Click="ButtonShow_OnClick"  CommandParameter="{Binding Id}" >
-                                            <Button.Background>
-                                                <ImageBrush  ImageSource="/Image/eye.png">
-                                                </ImageBrush>
-                                            </Button.Background>
-
-                                        </Button>
                                         <Button   Margin="10 0 10 0"  ToolTip="تعديل"      Click="ButtonEdit_OnClick"                Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonEdit"  CommandParameter="{Binding Id}"   >
                                             <Button.Background>
                                                 <ImageBrush  ImageSource="/Image/create-new-pencil-button.png">
@@ -135,16 +128,16 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button   Name="AddBtn"
-                Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="100" Content="Add" Grid.Column="1"
-                ToolTip="Resource name: MaterialDesignRaisedButton"
-                Background="#3A7D44"  Click="AddBtn_OnClick"
-                >
-
-                </Button>
+                
             </Grid>
-
+            <Button   Name="AddBtn" Grid.Row="3"
+                      Style="{StaticResource MaterialDesignRaisedButton}"
+                      Width="100" Content="Add" Grid.Column="1"
+                      ToolTip="Resource name: MaterialDesignRaisedButton"
+                      Background="#3A7D44"  Click="AddBtn_OnClick" ClickMode="Release"
+                      VerticalAlignment="Top"
+            >         
+            </Button>
         </Grid>
     </materialDesign:DialogHost>
     
